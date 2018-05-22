@@ -3,7 +3,7 @@ import {HttpService} from './../http.service';
 import {apis} from './../apis';
 
 @Injectable()
-export class BondService {
+export class HomeService {
   constructor(private _http: HttpService) {
   }
 

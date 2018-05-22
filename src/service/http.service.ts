@@ -1,8 +1,7 @@
 import {Injectable, ErrorHandler}     from '@angular/core';
-import {TranslateService} from 'ng2-translate';
 import {Observable, Observer}     from 'rxjs/Rx';
 import {Http, RequestOptions, Headers, URLSearchParams} from '@angular/http';
-import {ToastService} from './toast.service';
+//import {ToastService} from './toast.service';
 
 export enum HttpCodeEnum { E401, E400, E500, S200 }
 
@@ -12,9 +11,7 @@ export class HttpService {
   public observerLogin: Observer<any>;
 
   constructor(private _http: Http,
-              private translate: TranslateService,
-              private errHandle: ErrorHandler,
-              private toastService: ToastService) {
+              private errHandle: ErrorHandler) {
   }
 
   request(url: string, opts: Object) {
@@ -45,11 +42,11 @@ export class HttpService {
           observer.error(HttpCodeEnum.E401);
           if (opts['isSilence']) return;
 
-          this.toastService.errorConfirm({
+          /*this.toastService.errorConfirm({
             body: this.translate.get('ERRCONFIRM.LOGINFAILL')['value'],
             onlySure: false,
             targetPage: 'LoginPage'
-          });
+          });*/
         } else if (res.err_code === -2) {
           observer.error(HttpCodeEnum.E400);
         } else {
@@ -63,19 +60,12 @@ export class HttpService {
       }, err => {
         observer.error(err);
         // this._popupService.alert('服务器出错啦！工程师哥哥正在紧急抢修！');
-        // alert('服务器出错啦！工程师哥哥正在紧急抢修！');
       });
     });
   }
 
   get(url: string, opts?: Object) {
     let search = <URLSearchParams>(opts && opts['search']) || new URLSearchParams();
-
-    if (search.has('lang')) {
-      search.set("lang", this.translate.currentLang)
-    } else {
-      search.append("lang", this.translate.currentLang);
-    }
 
     return this.request(url, Object.assign({
       method: 'get',
