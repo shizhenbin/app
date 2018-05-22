@@ -11,12 +11,14 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import {SERVICE} from './../service/index';
+import {WIDGETS} from './../widgets/index';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    WIDGETS
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,8 @@ import {SERVICE} from './../service/index';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    WIDGETS
   ],
   providers: [
     StatusBar,

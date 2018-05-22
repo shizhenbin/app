@@ -1,0 +1,16 @@
+<section class="masker" *ngIf="toastService._isActive" (touchmove)="stopMove($event)">
+  <div class="hk-toast">
+    <div class="hk-toast-content">
+      <div class="title" [class.higher]="!toast.body" [innerHtml]="toast.title"></div>
+      <div *ngIf="toast.body" [innerHtml]="toast.body" class="body"></div>
+      <div *ngIf="toast.body" class="filter"></div>
+    </div>
+    <div *ngIf="!toast.onlySure" class="hk-btns">
+      <a (click)="cancel()">{{toast.cancelBtn}}</a>
+      <a (click)="sure()" class="sure-btn" [ngStyle]="{'color': toast.btnFontColor}">{{toast.sureBtn}}</a>
+    </div>
+    <div *ngIf="toast.onlySure" class="hk-btns">
+      <a (click)="sure()" class="sure-btn" [ngStyle]="{'color': toast.btnFontColor}">{{toast.sureBtn}}</a>
+    </div>
+  </div>
+</section>

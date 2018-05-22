@@ -1,0 +1,18 @@
+<ion-toolbar>
+  <ion-navbar #navbar hideBackButton>
+    <ion-buttons left [hidden]="hideBackButton">
+      <button ion-button tappable (click)="goBack()" style="margin-left: 5px;">
+        <i class="icon-icons ios-arrow-back"></i>
+      </button>
+    </ion-buttons>
+
+    <ion-title>{{ title }}</ion-title>
+    <ng-content></ng-content>
+
+    <ion-buttons end style="margin-right: 4px;" *ngIf="rightButton">
+      <button ion-button icon-only >
+        <i class="icon-icons ios-arrow-back"></i>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-toolbar>
