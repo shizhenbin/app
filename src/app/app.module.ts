@@ -10,15 +10,18 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import {SERVICE} from './../service/index';
-import {WIDGETS} from './../widgets/index';
+import { SERVICE } from './../service/index';
+import { WIDGETS } from './../widgets/index';
+
+import { LIST } from './../pages/list/index';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ListPage,
-    WIDGETS
+    WIDGETS,
+    LIST
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,8 @@ import {WIDGETS} from './../widgets/index';
     MyApp,
     HomePage,
     ListPage,
-    WIDGETS
+    WIDGETS,
+    LIST
   ],
   providers: [
     StatusBar,

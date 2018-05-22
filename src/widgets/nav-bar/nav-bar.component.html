@@ -1,8 +1,11 @@
 <ion-toolbar>
   <ion-navbar #navbar hideBackButton>
     <ion-buttons left [hidden]="hideBackButton">
+      <button ion-button menuToggle *ngIf="showMenu">
+        <ion-icon name="menu"></ion-icon>
+      </button>
       <button ion-button tappable (click)="goBack()" style="margin-left: 5px;">
-        <i class="icon-icons ios-arrow-back"></i>
+        <i class="menu"></i>
       </button>
     </ion-buttons>
 

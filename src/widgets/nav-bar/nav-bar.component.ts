@@ -12,6 +12,7 @@ declare var Wechat: any;
 })
 export class NavBarComponent implements AfterViewInit {
   @Input() title: string = ''; // 标题
+  @Input() showMenu: boolean = false; // 侧滑菜单
   @Input() text: string = ''; // back button 文本
   @Input() hideText: boolean = true; // 隐藏文本
   @Input() hideBackButton: boolean = false; // 隐藏回退按钮
