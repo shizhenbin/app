@@ -1,5 +1,5 @@
 
-import {Component, Input, AfterViewInit, ViewChild} from '@angular/core';
+import {Component, OnInit, Input, AfterViewInit, ViewChild} from '@angular/core';
 import {App, IonicModule, NavController, ModalController, Platform, Events, AlertController} from 'ionic-angular';
 import {Navbar, ToastController} from 'ionic-angular';
 import {ToastService} from "../../service/toast.service";
@@ -28,8 +28,12 @@ export class NavBarComponent implements AfterViewInit {
               private toastCtrl: ToastController,
               private events: Events,
               private toastService: ToastService) {
+
   }
 
+  ngOnInit(){
+    console.log(this.showMenu )
+  }
   private getCurPage() {
     let views = this.navCtrl.getViews();
     if (views.length === 0) {

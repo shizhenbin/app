@@ -72,7 +72,6 @@ export class MyApp {
     this.events.subscribe('popTo', (page) => {
       //  页面跳转前关闭toast
       this.toastService.isActive = false;
-      this.nav.popTo(page).then(() => this.sensors.pv({pvNames: this.getCurPage()}));
     });
     //页面跳转
     this.events.subscribe('goto', (page, params, opts, done) => {

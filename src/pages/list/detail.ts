@@ -14,8 +14,11 @@ export class ListDetail {
   }
   back(){
     this.toastService.successConfirm({
-      body: '你好~~~~'
+      body: '你好~~~~',
+      onlySure: false,
+      onSure: ()=>{
+        console.log('您点击了确认');
+      }
     });
-    this.navCtrl.pop()
   }
 }
