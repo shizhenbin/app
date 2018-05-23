@@ -10,7 +10,7 @@ interface LoadingConfig {
 }
 
 const DEF_LOADING: LoadingConfig = {
-  spinner: 'IOS',
+  spinner: 'ios',
   content: 'please waiting...',
   cssClass: 'common-loading',
   showBackdrop: true,

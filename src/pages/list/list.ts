@@ -14,24 +14,44 @@ export class ListPage {
   constructor(public events: Events,
               public tipService: TipService,
               public loadingService: LoadingService) {
-    this.items = [1, 2, 9]
+    this.items = [1, 2, 9, 2, 9, 2, 9, 2, 9, 2, 9, 2, 9, 2, 9, 2, 9, 2, 9];
   }
 
   ngOnInit(){
 
   }
 
-  gotoDetail() {
+  goDetail() {
     this.loadingService.showLoading();
     setTimeout(()=>{
       console.log('关闭loading');
-      this.loadingService.hideLoading()
+      this.loadingService.hideLoading();
+      this.events.publish('goto', ListDetail);
     },2000)
-   //this.events.publish('goto', ListDetail)
   }
 
   test(){
     console.log('提示语消息');
   }
+  doRefresh(refresher: any){
+    this.items = [1, 2, 9, 2, 9, 2, 9, 2, 9, 2, 9, 2, 9, 2, 9, 2, 9, 2, 9];
+    console.log('下拉刷新');
+    setTimeout(() => {
+      console.log('Async operation has ended');
+      refresher.complete();
+    }, 2000);
+  }
 
+  doInfinite(infinite:any){
+    console.log('Begin async operation');
+
+    setTimeout(() => {
+      for (let i = 0; i < 15; i++) {
+        this.items.push( this.items.length );
+      }
+
+      console.log('Async operation has ended');
+      infinite.complete();
+    }, 500);
+  }
 }
