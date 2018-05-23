@@ -1,0 +1,28 @@
+.naked-step-one{
+  .choose-self{
+    height: 300px;
+    border: 1px solid #2d2d2d;
+    background: #ccc;
+    display: flex;
+    flex-direction: row;
+    .left{
+      flex: 2;
+      .wrap{
+        display: flex;
+        align-content: space-between;
+        align-items: center;
+        .row{
+          flex: 1;
+          display:flex;
+          justify-content: space-between;
+          padding: 6px 2px;
+        }
+      }
+      :first-child{
+      }
+    }
+    .right{
+      flex: 1;
+    }
+  }
+}

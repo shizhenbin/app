@@ -1,0 +1,7 @@
+<ion-header>
+  <navbar title="高端定制" showMenu="true" hideBackButton="true"></navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item *ngFor="let item of types" (tap)="toChoose(item.page)">{{item.title}}</ion-item>
+</ion-content>

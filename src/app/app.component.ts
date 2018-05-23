@@ -3,7 +3,7 @@ import {Events, Nav, Platform, ToastController} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { HomePage } from '../pages/home/home';
+import { ChooseType } from '../pages/high-end-masonry/choose-type';
 import { ListPage } from '../pages/list/list';
 
 import { ToastService } from './../service/toast.service';
@@ -14,7 +14,7 @@ import { ToastService } from './../service/toast.service';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
   pages: Array<{title: string, component: any}>;
-  rootPage: any = HomePage;
+  rootPage: any = ChooseType;
 
   touchBackAgain: boolean = false;
 
@@ -28,7 +28,7 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
+      { title: 'Home', component: ChooseType },
       { title: 'List', component: ListPage }
     ];
 

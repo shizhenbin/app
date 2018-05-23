@@ -4,7 +4,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { HttpModule } from '@angular/http';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+import { ChooseType } from '../pages/high-end-masonry/choose-type';
 import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -13,29 +13,33 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { SERVICE } from './../service/index';
 import { WIDGETS } from './../widgets/index';
 
+import { HIGHENDMASONRY } from './../pages/high-end-masonry/index';
 import { LIST } from './../pages/list/index';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
+    ChooseType,
     ListPage,
     WIDGETS,
+    HIGHENDMASONRY,
     LIST
   ],
   imports: [
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp,{
-      mode: 'ios'
+      mode: 'ios',
+      hideTabs: false
     }),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
+    ChooseType,
     ListPage,
     WIDGETS,
+    HIGHENDMASONRY,
     LIST
   ],
   providers: [
