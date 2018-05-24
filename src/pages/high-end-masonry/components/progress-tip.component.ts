@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'progress-tip',
   templateUrl: 'progress-tip.component.html'
 })
 export class ProgressTip {
-
+  @Input() now:number = 0;
   progress = [
     { index: 0},
     { index: 1},
@@ -20,5 +20,6 @@ export class ProgressTip {
   }
 
   ngOnInit(){
+    console.log(this.now)
   }
 }

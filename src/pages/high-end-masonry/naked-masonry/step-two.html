@@ -1,0 +1,51 @@
+<ion-header>
+  <navbar title="高端定制"></navbar>
+</ion-header>
+
+<ion-content padding class="naked-step-two">
+  <progress-tip [now]="step"></progress-tip>
+  <section>
+    <h3>信息筛选</h3>
+    <div class="choose">
+      <p>款式选择</p>
+      <button ion-button color="light">全部</button>
+      <button ion-button color="light">男款</button>
+      <button ion-button color="light">女款</button>
+      <button ion-button color="light">通用</button>
+    </div>
+    <div class="choose">
+      <p>镶法选择</p>
+      <button ion-button color="light">全部</button>
+      <button ion-button color="light">钉镶</button>
+      <button ion-button color="light">卡镶</button>
+      <button ion-button color="light">瓜镶</button>
+      <button ion-button color="light">藏镶</button>
+      <button ion-button color="light">轨道镶</button>
+      <button ion-button color="light">包镶</button>
+    </div>
+    <div class="choose">
+      <p>系列选择</p>
+      <button ion-button color="light">全部</button>
+      <button ion-button color="light">灵动吊坠</button>
+      <button ion-button color="light">猴年系列</button>
+      <button ion-button color="light">婚嫁系列</button>
+      <button ion-button color="light">可爱宝贝</button>
+      <button ion-button color="light">父亲节</button>
+      <button ion-button color="light">元旦系列</button>
+      <button ion-button color="light">职场系列</button>
+      <button ion-button color="light">彩宝系列</button>
+      <button ion-button color="light">百年-幸福</button>
+      <button ion-button color="light">端午粽情</button>
+      <button ion-button color="light">圣诞系列</button>
+      <button ion-button color="light">四节沐歌</button>
+      <button ion-button color="light">见证爱</button>
+    </div>
+  </section>
+  <section class="content">
+    <div class="item" *ngFor="let item of dataList; let i = index" [ngClass]="{choose: i === choose}" (tap)="doChoose(item, i)">{{i}}</div>
+  </section>
+  <section class="footer">
+    <button ion-button color="light" (tap)="pop()">上一步</button>
+    <button ion-button color="light" (tap)="next()">下一步</button>
+  </section>
+</ion-content>

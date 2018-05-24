@@ -25,7 +25,6 @@ export class ChooseType {
   }
 
   toChoose(page:any){
-    console.log(page)
     this.events.publish('goto', page);
   }
 }

@@ -1,0 +1,29 @@
+<ion-header>
+  <navbar title="高端定制"></navbar>
+</ion-header>
+
+<ion-content padding class="naked-step-three">
+  <progress-tip [now]="step"></progress-tip>
+  <section class="content">
+    <div class="slide">
+      <ion-slides autoplay="2000" pager="true" loop=true>
+        <ion-slide *ngFor="let item of slidesItems">
+          {{item}}
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <div class="message">
+      <div class="main-mess">
+        <p><span>商品名：</span></p>
+        <p><span>所属系列：</span></p>
+        <p><span>款号：</span></p>
+      </div>
+      <div></div>
+      <div></div>
+    </div>
+  </section>
+  <section class="footer">
+    <button ion-button color="light" (tap)="pop()">上一步</button>
+    <button ion-button color="light">下一步</button>
+  </section>
+</ion-content>

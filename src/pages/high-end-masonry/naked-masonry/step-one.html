@@ -3,40 +3,55 @@
 </ion-header>
 
 <ion-content padding class="naked-step-one">
-  <progress-tip></progress-tip>
-  <section class="choose-self">
-    <div class="left">
-      <div class="wrap">
-        <span>形状：</span>
-        <div class="row">aaaaa</div>
-        <div class="row">aaaaa</div>
-        <div class="row">aaaaa</div>
-        <div class="row">aaaaa</div>
+  <progress-tip [now]="step"></progress-tip>
+  <section class="choose-wrap">
+    <section class="choose-self">
+      <div class="left">
+        <div class="wrap" *ngFor="let item of types">
+          <span class="title">{{item.title}}:</span>
+          <div class="row" *ngFor="let type of item.data" (tap)="doChoose(type)" [ngClass]="{choose: type.choose}">{{type.name}}</div>
+        </div>
       </div>
-      <div class="wrap">
-        <span>形状：</span>
-        <div class="row">aaaaa</div>
-        <div class="row">aaaaa</div>
-        <div class="row">aaaaa</div>
-        <div class="row">aaaaa</div>
+      <div class="right">
+        <div class="wrap" *ngFor="let item of types2">
+          <span class="title">{{item.title}}:</span>
+          <div class="row" *ngFor="let type of item.data" (tap)="doChoose(type)" [ngClass]="{choose: type.choose}">{{type.name}}</div>
+        </div>
       </div>
-      <div class="wrap">
-        <span>形状：</span>
-        <div class="row">aaaaa</div>
-        <div class="row">aaaaa</div>
-        <div class="row">aaaaa</div>
-        <div class="row">aaaaa</div>
-      </div>
-      <div class="wrap">
-        <span>形状：</span>
-        <div class="row">aaaaa</div>
-        <div class="row">aaaaa</div>
-        <div class="row">aaaaa</div>
-        <div class="row">aaaaa</div>
-      </div>
+    </section>
+    <section class="btns">
+      <button ion-button color="light">搜索</button>
+      <button ion-button color="light" (tap)="reset()">重置</button>
+    </section>
+  </section>
+  <section class="data-list">
+    <div class="list">
+      <span>形状</span>
+      <span>证书</span>
+      <span>砖重（ct）</span>
+      <span>颜色</span>
+      <span>净度</span>
+      <span>切工</span>
+      <span>荧光</span>
+      <span>售价</span>
+      <span>详情</span>
+      <span>购买</span>
     </div>
-    <div class="right">
-      right
+    <div class="list" *ngFor="let item of dataList; let i = index">
+      <span>{{item.field0}}</span>
+      <span>{{item.field0}}</span>
+      <span>{{item.field0}}</span>
+      <span>{{item.field0}}</span>
+      <span>{{item.field0}}</span>
+      <span>{{item.field0}}</span>
+      <span>{{item.field0}}</span>
+      <span>{{item.field0}}</span>
+      <span>{{item.field0}}</span>
+      <span [ngClass]="{select: i === select}" (tap)="doSelect(i)">请选择</span>
     </div>
+  </section>
+  <section class="footer">
+    <button ion-button color="blue" (tap)="pop()">上一步</button>
+    <button ion-button color="blue" (tap)="next()">下一步</button>
   </section>
 </ion-content>

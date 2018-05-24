@@ -1,0 +1,16 @@
+.naked-step-three{
+  .content{
+    display: flex;
+    height: 90%;
+    border: 1px solid orangered;
+    align-items: stretch;
+    .slide{
+      width: 45%;
+      border: 1px solid green;
+    }
+    .message{
+      flex: 1;
+      border: 1px solid green;
+    }
+  }
+}

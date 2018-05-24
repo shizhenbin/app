@@ -1,0 +1,20 @@
+.naked-step-two{
+  .choose{
+    p{
+      display: inline-block;
+    }
+  }
+  .content{
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid palegoldenrod;
+    display: flex;
+    flex-wrap: wrap;
+    .item{
+      width: 25%;
+      height: 100px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+  }
+}

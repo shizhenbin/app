@@ -1,3 +1,8 @@
-<section class="progress">
-<span *ngFor="let item of progress">{{item.index}}</span>
+<section class="progress-wrap">
+  <div class="progress">
+    <span *ngFor="let item of progress; let i = index"
+          [ngClass]="{haveIcon: i===0 || i===3 || i===6, active: i <= now }"
+    ></span>
+  </div>
+  <p>已完成{{'15%'}}</p>
 </section>
